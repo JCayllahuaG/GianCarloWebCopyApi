@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: GianCarloWebCopyApi
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/giancarlo_web_copy
+    username: user
+    password: password
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    open-in-view: false
+  springdoc:
+    api-docs:
+      groups:
+        enabled: true
+      path: "/api-docs"
+    swagger-ui:
+      path: "/swagger-ui/index.html"
+
+
+server:
+  port: 8080
+
