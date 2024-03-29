@@ -1,0 +1,29 @@
+package com.jcayllahua.giancarlowebcopy.api.shared.domain.model.entities;
+
+
+import jakarta.persistence.Column;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.MappedSuperclass;
+import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.util.Date;
+
+@EntityListeners(AuditingEntityListener.class)
+@MappedSuperclass
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
+public class AuditableModel {
+    @CreatedDate
+    @Column(nullable = false, updatable = false)
+    private Date createdAt;
+
+    @LastModifiedDate
+    @Column(nullable = false)
+    private Date updatedAt;
+
+}
